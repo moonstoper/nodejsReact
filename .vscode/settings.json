@@ -1,4 +1,3 @@
 {
-    "git.autofetch": true,
-    "github.remoteName": "https://github.com/moonstoper/nodejsReact"
+    "git.autofetch": true
 }
