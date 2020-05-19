@@ -22,6 +22,7 @@ passport.use(
       clientID: keys.googleClientID,
       clientSecret: keys.googleClientSecret,
       callbackURL: "/auth/google/callback",
+      proxy:true
     },
     (accessToken, refreshToken, profile, done) => {
       User.findOne({ googleID: profile.id }).then((existingUser) => {
@@ -30,26 +31,6 @@ passport.use(
           done(null,existingUser);
         } else {
           new User({ googleID: profile.id }).save().then(user=>done(null,user));
-        }
-      });
-    }
-  )
-);
-passport.use(
-  new FacebookStrategy(
-    {
-      clientID: keys.facebookID,
-      clientSecret: keys.facebookSecret,
-      callbackURL: "/auth/facebook/callback",
-    },
-    (accessToken, refreshToken, profile, done) => {
-      User.findOne({ googleID: profile.id }).then((existingUser) => {
-        if (existingUser) {
-          //already documented
-          done(null,existingUser);
-        } else {
-          //new User({ googleID: profile.id }).save().then(user=>done(null,user));
-          console.log("profile:",profile);
         }
       });
     }
