@@ -91,6 +91,9 @@ class Header extends Component {
           <div className="uk-navbar-right">
             <ul className="uk-navbar-nav">
               <li className="uk-active ">
+                <a>ADD Credit</a>
+              </li>
+              <li className="uk-active ">
                 <a>Credit</a>
               </li>
               <li

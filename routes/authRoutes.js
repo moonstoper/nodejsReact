@@ -1,6 +1,9 @@
 const passport = require("passport");
 
 module.exports = (app) => {
+  /////////////////////////////////////
+  //GOGGLE //
+  //////////////////////////////////////
   app.get(
     "/auth/google",
     passport.authenticate("google", {
@@ -14,6 +17,22 @@ module.exports = (app) => {
       res.redirect("/surveys");
     }
   );
+  //////////////////////////////////////
+  //FACEBOOK //
+  //////////////////////////////////////
+  app.get(
+    "/auth/facebook",
+    passport.authenticate("facebook")
+  );
+  app.get(
+    "/auth/facebook/callback",
+    passport.authenticate("facebook"),
+    (req, res,) => {
+      res.redirect("/surveys");
+    }
+  );
+  /////////////////////////////////////
+  /////////////////////////////////////
   app.get("/api/logout", (req, res) => {
     req.logout();
     res.redirect("/");
