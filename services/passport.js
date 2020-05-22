@@ -30,7 +30,7 @@ passport.use(
         //already documented
         return done(null, existingUser);
       }
-      const user = await new User({ googleID: profile.id }).save();
+      const user = await new User({ googleID: profile.id }).save();//saving the profile
       done(null, user);
     }
   )
@@ -46,7 +46,7 @@ passport.use(
       proxy: true, //making proxy true for facebook auth
     },
     async (accessToken, refreshToken, profile, done) => {
-      const existingUser = await User.findOne({ facebookUserID: profile.id });
+      const existingUser = await User.findOne({ facebookUserID: profile.id });//saving the profile
 
       if (existingUser) {
         //already documented
