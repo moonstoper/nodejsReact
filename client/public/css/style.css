@@ -4,29 +4,46 @@
     background-clip: text;
     -webkit-background-clip:text;
     font-family:'Rubik', sans-serif !important;
-    background-image:url('https://images.unsplash.com/photo-1533122250115-6bb28e9a48c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-image:url('../images/mailfy_back.jpeg');
     background-repeat: repeat;
     font-weight: bold !important;
     letter-spacing: 20px;
     background-size:100%;
     position: absolute;
     left:50%;
-    top:35%;
+    top:30%;
+    
     animation:animate 10s ease forwards alternate;
     transform: translate(-50%,-50%);
     animation-iteration-count: infinite;
-    
+    margin-top: 10px !important;
+    margin-bottom: 25px !important;
+    padding-bottom: 25px !important;
     
 }
+.conatinerMar{
+    margin-bottom: 10px !important;
+    padding-bottom: 10px !important;
+}
+
 
 	
 @-moz-document url-prefix() {
     .landing {
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        margin-top: 20px !important;
+    margin-bottom: 30px !important;
+    padding-bottom: 30px !important;
         
        
     }
+}
+.padLadding{
+
+   background-color: white;
+   
+
 }
 
 
