@@ -37,6 +37,26 @@ class Payment extends Component {
                 </button>
               </StripeCheckout>
             </div>
+            <div className="uk-card uk-card-default uk-card-body uk-text-center uk-margin-auto">
+              <p className=" uk-text-large uk-card-header ">Essential Payment</p>
+              <p>You get 10 credits</p>
+              <p>1 credit/mail</p>
+              <p>No hidden charges</p>
+              <p>No autocharge or subscription</p>
+              <hr className="uk-divider-icon" />
+              <StripeCheckout
+                name="Mailfy"
+                description="10 emails for 10$"
+                amount={1000}
+                token={(token) => this.props.handleTokenv2(token)}
+                stripeKey={process.env.REACT_APP_STRIPE_KEY}
+                billingAddress=""
+              >
+                <button className="uk-button uk-button-primary   uk-margin-bottom">
+                  Buy Credit
+                </button>
+              </StripeCheckout>
+            </div>
           </div>
         </div>
       </div>
