@@ -1,6 +1,6 @@
 {
-  "name": "nodejsreact",
-  "version": "1.0.0",
+  "name": "client",
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@stripe/stripe-js": "^1.5.0",
