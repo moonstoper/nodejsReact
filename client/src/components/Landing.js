@@ -4,7 +4,7 @@ const Landing=()=>{
     
     return (
       
-    <div className=" landing">Mailfy</div>);
+    <div><h1 className="uk-heading-xlarge landing">Mailfy</h1></div>);
 
 
 }
