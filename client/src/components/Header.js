@@ -13,7 +13,7 @@ class Header extends Component {
         return (
           <ul className="uk-navbar-nav">
             <li>
-              <a className="uk-active uk-margin-large-right uk-text-emphasis uk-button uk-button-text">
+              <a className="uk-active uk-margin-large-right  uk-button uk-button-text">
                 Login
               </a>
               <div
@@ -40,14 +40,14 @@ class Header extends Component {
       default:
         return (
           <ul className="uk-navbar-nav">
-            <li className="uk-active uk-text-emphasis uk-button uk-button-text">
+            <li className="uk-active  uk-button uk-button-text">
               <a>
                 Credits
                 {" : " + this.props.auth.credits + "  "}
               </a>
             </li>
             <li>
-              <a className="uk-active uk-text-emphasis uk-margin-large-right uk-button uk-button-text">
+              <a className="uk-active  uk-margin-large-right uk-button uk-button-text">
                 User
               </a>
               <div className="uk-navbar-dropdown">
@@ -72,26 +72,19 @@ class Header extends Component {
 
   render() {
     //console.log(this.props);
-    //header which will be render 
+    //header which will be render uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive:uk-navbar-transparent;top:200"
     return (
-      <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive:uk-navbar-transparent;top:200">
+      <div className="">
         <nav
-          className="uk-navbar-primary uk-margin uk-background-primary uk-light uk-text-default uk-padding-large-bottom"
-          uk-navbar="mode: hover"
+          className=" uk-margin  uk-text-default uk-padding-large-bottom uk-navbar-transparent  uk-navbar"  
+          uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky uk-background-muted uk-dark; cls-inactive: uk-navbar-transparent uk-dark uk-animation-fade-slow; top: 200"
+          uk-navbar="mode: click"
         >
           <div className="uk-navbar-left uk-navbar-nav uk-active">
             <Link 
               to={this.props.auth ? "/surveys" : "/"}
-              className="uk-nav uk-margin-left uk-logo uk-text-emphasis"
+              className="uk-nav uk-margin-large-left uk-logo  headerLogo"
             >
-              <img
-                src="love.svg"
-                alt="LOGO"
-                height="40"
-                width="40"
-                className=" uk-animation-stroke uk-margin-small-right"
-                uk-svg="uk-animation:true"
-              ></img>
               Mailfy
             </Link>
           </div>

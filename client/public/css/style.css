@@ -1,58 +1,173 @@
-.landing{
-    color:white;
+.landing {
+    color: white;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    -webkit-background-clip:text;
-    font-family:'Rubik', sans-serif !important;
-    background-image:url('../images/mailfy_back.jpeg');
+    -webkit-background-clip: text;
+    font-family: 'Rubik', sans-serif !important;
+    background-image: url('../images/mailfy_back.jpeg');
     background-repeat: repeat;
     font-weight: bold !important;
     letter-spacing: 20px;
-    background-size:100%;
+    background-size: 100%;
     position: absolute;
-    left:50%;
-    top:30%;
-    
-    animation:animate 10s ease forwards alternate;
-    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 30%;
+    animation: animate 10s ease forwards alternate;
+    transform: translate(-50%, -50%);
     animation-iteration-count: infinite;
     margin-top: 10px !important;
     margin-bottom: 25px !important;
     padding-bottom: 25px !important;
-    
+
 }
-.conatinerMar{
+
+.conatinerMar {
     margin-bottom: 10px !important;
     padding-bottom: 10px !important;
 }
 
 
-	
+
 @-moz-document url-prefix() {
     .landing {
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         margin-top: 20px !important;
-    margin-bottom: 30px !important;
-    padding-bottom: 30px !important;
-        
-       
+        margin-bottom: 30px !important;
+        padding-bottom: 30px !important;
+
+
     }
 }
-.padLadding{
 
-   background-color: white;
-   
+.padLadding {
+
+    background-color: white;
+
 
 }
 
 
 
-@keyframes animate{
-    from{
+@keyframes animate {
+    from {
         background-position: center 25%;
     }
-    to{
+
+    to {
         background-position: right 75%;
     }
+}
+
+.headerLogo {
+    font-family: 'Rubik', sans-serif !important;
+    font-weight: 500;
+
+}
+
+.summaryf {
+
+
+    margin-left: auto;
+
+
+
+}
+
+.summaryl {
+
+    margin-right: auto;
+
+
+}
+
+@media only screen and (max-widht:900px) {
+    .summaryl {
+        margin-top: 50px !important;
+    }
+
+    .summary {
+        margin-left: 20px;
+    }
+}
+
+.summary {
+    margin: auto;
+
+
+}
+
+.loading {
+    display: inline-block;
+    align-items: center;
+    width: 3px;
+    height: 20px;
+    transform: skew(150deg);
+    border-top: 50px solid #555;
+    margin-left: auto;
+    border-radius: 25px;
+    animation: loadinganimate 1s ease 0s forwards infinite;
+}
+
+.loading:nth-child(2) {
+
+    transform: skew(-150deg);
+    margin-left: 35px;
+    animation: loadinganimate 1s ease 1s forwards infinite;
+}
+
+.loading:nth-child(3) {
+
+    transform: skew(150deg);
+    margin-left: 15px;
+    animation: loadinganimate 1s ease 2s forwards infinite;
+}
+
+.loading-container {
+    display: fixed;
+    text-align: center;
+    top: 50%;
+    margin-top: 30%;
+}
+@media only screen and (max-width:900px){
+    .loading-container{
+        margin-top: 60%;
+    }
+}
+.loading:nth-child(4) {
+
+    transform: skew(-150deg);
+    margin-left: 35px;
+    animation: loadinganimate 1s ease 4s forwards infinite;
+}
+
+.loading:nth-child(5) {
+
+    transform: skew(150deg);
+    margin-left: 15px;
+    animation: loadinganimate 1s ease 5s forwards infinite;
+}
+
+.loading:nth-child(6) {
+
+    transform: skew(-150deg);
+    margin-left: 35px;
+    animation: loadinganimate 1s ease 6s forwards infinite;
+}
+
+.loading:nth-child(7) {
+
+    transform: skew(150deg);
+    margin-left: 15px;
+    animation: loadinganimate 1s ease 7s forwards infinite;
+}
+
+.loading-container:nth-child(2){
+   
+    margin-top: 1px;
+}
+
+@keyframes loadanimate{
+    from {border-color: #333333;}
+    to{border-color: lightskyblue;}
 }

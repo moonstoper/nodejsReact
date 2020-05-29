@@ -9,22 +9,26 @@ const Landing = () => {
         </p>
       </div>
       <div className="uk-section-large">
-        <div className="uk-container uk-flex uk-flex-center  uk-padding">
+        <div className="uk-container uk-flex uk-flex-center  uk-padding uk-margin-medium-top uk-margin-xlarge-bottom">
           <div
-            className="uk-grid uk-grid-divider  uk-child-width-1-1@s uk-child-width-1-2@s uk-margin-auto"
+            className="uk-grid uk-grid-divider  uk-child-width-1-1@s uk-child-width-1-2@s summary uk-text-secondary"
             uk-grid>
-            <div>
+            <div className="summaryf">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </div>
-            <div>
+            <div className="summaryl">
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat.
             </div>
           </div>
         </div>
       </div>
-      <div className="uk-section-large padLadding">
+      <div className="uk-section-large">
         <div className="uk-container conatinerMar uk-child-width-1-4@m uk-child-width-1-2@s uk-flex uk-flex-row uk-padding ">
           <div
             className="uk-card uk-card-default uk-margin-auto  "
