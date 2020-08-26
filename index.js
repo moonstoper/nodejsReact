@@ -6,6 +6,7 @@ const passport = require("passport");
 const keys = require("./config/keys");
 require("./models/Users");
 require("./services/passport");
+require("./models/Survey");
 mongoose.connect(keys.mongoURI);
 const app = express();
 app.use(express.json());
@@ -19,6 +20,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 require("./routes/authRoutes")(app);
 require("./routes/billingRoutes")(app);
+require("./routes/surveyRoutes")(app);
 if (process.env.NODE_ENV === "production") {
   //express will serve up producton
   //like main.js or main.css

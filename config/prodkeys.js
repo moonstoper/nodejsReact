@@ -7,4 +7,5 @@ module.exports = {
   facebookSecret: process.env.FACEBOOK_SECRET,
   stripePublishableKey:process.env.STRIPE_PUBLISHABLE_KEY,
   stripeSecretKey:process.env.STRIPE_SECRET_KEY,
+  sendgridKey:process.env.SENDGRID_KEY
 };

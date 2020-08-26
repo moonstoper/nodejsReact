@@ -22,7 +22,7 @@ class  App extends Component {
   }
   
   render(){
-    const {loading} =this.state;
+    const {loading} =this.state.loading; //change here
     if(loading){
       return(
         <div>
