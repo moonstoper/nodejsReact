@@ -1,7 +1,8 @@
 import React from "react";
 
 const Dashboard=()=>{
-    return (<div className="uk-text-center uk-text-large uk-text-lead">Dashboard</div>);
+    return (<div><div className="uk-text-center uk-text-large uk-text-lead">Dashboard</div>
+   </div> );
 
 
 }
