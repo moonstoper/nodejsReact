@@ -12,7 +12,7 @@ const Landing = () => {
         <div className="uk-container uk-flex uk-flex-center  uk-padding uk-margin-medium-top uk-margin-xlarge-bottom">
           <div
             className="uk-grid uk-grid-divider  uk-child-width-1-1@s uk-child-width-1-2@s summary uk-text-secondary"
-            uk-grid>
+            uk-grid="true">
             <div className="summaryf">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.

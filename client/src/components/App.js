@@ -10,7 +10,7 @@ import Dashboard from "./Dashboard";
 import Landing from "./Landing";
 import Plans from "./Plans"
 import Loading from "./Loading"
-const SurveyNew = () => <h2>Survey</h2>;
+import SurveyNew from "../surveys/SurveyNew"
 
 class  App extends Component {
   state={

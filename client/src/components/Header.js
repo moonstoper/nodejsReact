@@ -8,7 +8,7 @@ class Header extends Component {
     //using switch to switch different according to state
     switch (this.props.auth) {
       case null:
-        return <div uk-spinner></div>;
+        return <div uk-spinner="true"></div>;
       case false:
         return (
           <ul className="uk-navbar-nav">
@@ -58,6 +58,7 @@ class Header extends Component {
                   <li>
                     <a href="#">SETTINGS</a>
                   </li>
+                  <li><a href="/surveys">SURVEYS</a></li>
                   <p>----------</p>
                   <li>
                     <a href="/addcredits">PAYMENTS</a>
