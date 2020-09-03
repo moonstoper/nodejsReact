@@ -7,7 +7,10 @@ const keys = require("./config/keys");
 require("./models/Users");
 require("./services/passport");
 require("./models/Survey");
-mongoose.connect(keys.mongoURI);
+mongoose.connect(keys.mongoURI, {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+});
 const app = express();
 app.use(express.json());
 app.use(

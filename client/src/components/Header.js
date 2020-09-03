@@ -13,7 +13,7 @@ class Header extends Component {
         return (
           <ul className="uk-navbar-nav">
             <li>
-              <a className="uk-active uk-margin-large-right  uk-button uk-button-text">
+              <a className="uk-active uk-margin-large-right uk-padding uk-margin-small-bottom uk-button uk-button-text " >
                 Login
               </a>
               <div
@@ -40,14 +40,14 @@ class Header extends Component {
       default:
         return (
           <ul className="uk-navbar-nav">
-            <li className="uk-active  uk-button uk-button-text">
-              <a>
+            <li className="uk-active">
+              <a className="uk-button uk-button-text uk-padding">
                 Credits
                 {" : " + this.props.auth.credits + "  "}
               </a>
             </li>
             <li>
-              <a className="uk-active  uk-margin-large-right uk-button uk-button-text">
+              <a className="uk-active  uk-margin-large-right uk-button uk-button-text uk-padding" >
                 User
               </a>
               <div className="uk-navbar-dropdown">
@@ -56,7 +56,7 @@ class Header extends Component {
                     <a href="/api/logout">LOGOUT</a>
                   </li>
                   <li>
-                    <a href="#">SETTINGS</a>
+                    <a href="/settings">SETTINGS</a>
                   </li>
                   <li><a href="/surveys">SURVEYS</a></li>
                   <p>----------</p>
