@@ -48,7 +48,7 @@ class Header extends Component {
             </li>
             <li>
               <a className="uk-active  uk-margin-large-right uk-button uk-button-text uk-padding" >
-                User
+                {(this.props.auth.userName) ? this.props.auth.userName.split(" ")[0]: "User"}
               </a>
               <div className="uk-navbar-dropdown">
                 <ul className="uk-nav uk-navbar-dropdown-nav">

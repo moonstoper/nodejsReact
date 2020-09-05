@@ -4,16 +4,11 @@ import { reduxForm, Field } from "redux-form";
 import SurveyField from "./SurveyField";
 import _ from "lodash";
 import { Link } from "react-router-dom";
-import ValidEmails from "../utils/validateEmail"
-const reduxField = [
-  { label: "Survey Title", name: "title" },
-  { label: "Survey Subject", name: "subject" },
-  { label: "Body", name: "body" },
-  { label: "Recipients", name: "email" },
-];
+import ValidEmails from "../utils/validateEmail";
+import REDUXFIELD from "./formfields"
 class SurveyForm extends Component {
   renderFields() {
-    return _.map(reduxField, ({ label, name }) => {
+    return _.map(REDUXFIELD, ({ label, name }) => {
       return (
         <Field
           component={SurveyField}
@@ -25,7 +20,7 @@ class SurveyForm extends Component {
       );
     });
   }
-  
+
   render() {
     return (
       <div className="container uk-flex uk-flex-center">
@@ -34,9 +29,15 @@ class SurveyForm extends Component {
           className="uk-grid-small"
         >
           {this.renderFields()}
-          <Link to="/surveys" className="uk-button uk-button-danger uk-margin-large uk-align-left">
-          <span className="uk-margin-small-right" uk-icon="icon: close"></span>
-          Cancel
+          <Link
+            to="/surveys"
+            className="uk-button uk-button-danger uk-margin-large uk-align-left"
+          >
+            <span
+              className="uk-margin-small-right"
+              uk-icon="icon: close"
+            ></span>
+            Cancel
           </Link>
           <button
             type="submit"
@@ -49,19 +50,20 @@ class SurveyForm extends Component {
       </div>
     );
   }
-
-
 }
 function validate(values) {
-    const error = {};
-    error.email = ValidEmails(values.email || '');    
-    _.each(reduxField,({name})=>{
-        if(!values[name])
-            error[name] = "Error!";
-    })    
-    return error;
+  const errors = {};
+
+  _.each(REDUXFIELD, ({ name }) => {
+    if (!values[name]) {
+      errors[name] = "Fill This Form";
+    }
+  });
+  errors.recipients = ValidEmails(values.recipients || "");
+  return errors;
 }
 export default reduxForm({
-    validate,
-  form: "surveyForm"
+  validate,
+  form: "surveyForm",
+  destroyOnUnmount: false,
 })(SurveyForm);

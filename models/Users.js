@@ -4,8 +4,8 @@ const { Schema } = mongoose;
 const userSchema = new Schema({
   googleID: String,
   facebookUserID:String,
-  credits:{type:Number,default:0}
- // name: String,
+  credits:{type:Number,default:0},
+  userName: String,
 });
 
 //creating moongoose collection
