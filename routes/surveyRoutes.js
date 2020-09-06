@@ -40,7 +40,7 @@ module.exports = (app) => {
           },
           {
             $inc: { [choice]: 1 },
-            $set: { "recipients.$.response": true },
+            $set: { "recipients.$elemMatch.response": true },
             $set: { lastrespond: new Date() },
           }
         ).exec();
