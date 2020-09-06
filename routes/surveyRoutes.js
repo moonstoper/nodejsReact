@@ -20,9 +20,9 @@ module.exports = (app) => {
     });
     res.send(survey);
   });
-  app.post("/api/surveys/webhooks", (req, res) => {
+  app.post("/api/surveys/webhooks", async (req, res) => {
     const p = new Path("/api/surveys/:surveyId/:choice");
-    _.chain(req.body)
+    await _.chain(req.body)
       .map(({ email, url }) => {
         const match = p.test(new URL(url).pathname);
         if (match)
@@ -35,13 +35,13 @@ module.exports = (app) => {
           {
             _id: surveyId,
             recipients: {
-              $elemMatch: { email: email, response: false },
+              $elemMatch: { email: email, responded: false },
             },
           },
           {
             $inc: { [choice]: 1 },
-            $set: { "recipients.$elemMatch.response": true },
-           lastrespond: new Date()
+            $set: { "recipients.$.responded": true },
+            lastrespond: new Date(),
           }
         ).exec();
       })
