@@ -14,6 +14,12 @@ module.exports = (app) => {
     res.send("Thanks for voting");
   });
 
+  app.get("/api/surveys", requiredLogin, async (req, res) => {
+    const survey = await Survey.find({ _user: req.user.id }).select({
+      recipients: false,
+    });
+    res.send(survey);
+  });
   app.post("/api/surveys/webhooks", (req, res) => {
     const p = new Path("/api/surveys/:surveyId/:choice");
     _.chain(req.body)
@@ -53,7 +59,7 @@ module.exports = (app) => {
         .split(",")
         .map((email) => ({ email: email.trim() })),
       _user: req.user.id,
-      dateSent: Date.now(),
+      dateSent: new Date(),
     });
 
     const mailer = new Mailer(survey, surveyTemplate(survey));

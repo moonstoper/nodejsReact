@@ -1,20 +1,26 @@
 import React from "react";
-import {Link} from "react-router-dom"
+import {Link} from "react-router-dom";
+import SurveyList from "../surveys/SurveyList";
 const Dashboard = () => {
   return (
     <div>
-      <div className="uk-text-center uk-text-large uk-text-lead">Dashboard</div>
-      <br />
-      <div className="uk-flex uk-flex-center">
-        <div className=" uk-padding-large ">
-          Like to add more surveys!
+      <div className="uk-container">
+      <div className="uk-float-left uk-text-primary uk-text-lead uk-text-bold">Dashboard</div>
+        <div className="uk-float-right ">
+          Likes to add more surveys!
           <Link to ="/surveys/new"><button
-            className="uk-button uk-button-danger   uk-margin-large-left"
+            className="uk-button uk-button-danger   uk-margin-large-left uk-card-primary"
             uk-icon="icon:plus"
           ></button></Link>
-        </div>
+          </div>
+          </div>
+          
+      <br />
+      <SurveyList/>
+      
+        
       </div>
-    </div>
+    
   );
 };
 

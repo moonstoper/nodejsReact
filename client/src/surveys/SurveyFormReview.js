@@ -8,7 +8,7 @@ import { withRouter } from "react-router-dom";
 const SurveyReview = ({ onCancel, formValues, submitSurvey,history }) => {
   const reviewField = _.map(REDUXFIELD, ({ name, label }) => {
     return (
-      <div className="uk-margin-small">
+      <div className="uk-margin-small" key={name}>
         <label className="uk-alert-primary">{label}</label>
         <div className="uk-alert-secondary">{formValues[name]}</div>
       </div>
